@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { UserLogin } from 'src/app/models/userlogin';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { TokenService } from 'src/app/services/token.service';
-import Swal from 'sweetalert2';
+//import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-venta-mayorista-login',
@@ -54,13 +54,13 @@ export class VentaMayoristaLoginComponent implements OnInit {
         //this.tokenService.setAuthorities(data.authorities);
         //this.roles = data.authorities;
 
-        Swal.fire({
+        /*Swal.fire({
           position: 'top-end',
           icon: 'success',
           title: 'Bienvenido ' + this.tokenService.getUserName(),// + data.username,
           showConfirmButton: false,
           timer: 1000
-        })
+        })*/
 
         this.router.navigate(['/ventamayorista']);
       },
@@ -68,13 +68,13 @@ export class VentaMayoristaLoginComponent implements OnInit {
         // this.isLogged = false;
         // this.isLoginFail = true;
         this.errorMessage = err.error.message;
-        Swal.fire({
+        /*Swal.fire({
           position: 'top-end',
           icon: 'error',
           title: this.errorMessage,
           showConfirmButton: false,
           timer: 1500
-        })
+        })*/
         
         //console.log(this.errorMessage);
       });

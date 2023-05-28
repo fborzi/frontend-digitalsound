@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import Swal from 'sweetalert2';
+//import Swal from 'sweetalert2';
 import { TokenService } from '../token.service';
 
 @Injectable({

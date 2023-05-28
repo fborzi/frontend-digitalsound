@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { TokenService } from 'src/app/services/token.service';
-import Swal from 'sweetalert2'
+//import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-venta-mayorista-signup',
@@ -78,25 +78,25 @@ export class VentaMayoristaSignUpComponent implements OnInit {
         // this.isRegistered = true;
         // this.isRegisteredFail = false;
         this.router.navigate(['/ventamayoristalogin']);
-        Swal.fire({
+        /*Swal.fire({
           position: 'top-end',
           icon: 'success',
           title: 'Cuenta creada con éxito',
           showConfirmButton: false,
           timer: 1500
-        })
+        })*/
       },        
         error => {
           // this.isRegistered = false;
           // this.isRegisteredFail = true;
           // this.errorMessage = error.error.message;
-          Swal.fire({
+          /*Swal.fire({
             position: 'top-end',
             icon: 'error',
             title: error.error.message, //this.errorMessage,
             showConfirmButton: false,
             timer: 1500
-          })
+          })*/
         }
       );
 
