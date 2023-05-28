@@ -1,0 +1,1291 @@
+<app-navbar></app-navbar>
+<!--<div class="container mt-5">
+    <div class="col-md-6">
+        <h1>Rubros</h1>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let rubro of rubros">
+                        <tr>
+                            <th scope="row">{{rubro.id}}</th>
+                            <td>{{rubro.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>(change)="onSelect($any($event.target).value)" 
+        <div class="mb-3">
+            <h4>Rubros</h4>
+            <select (change)="onSelect($any($event.target).value)" formControlName="rubro" class="form-select" type="number" aria-label="Default select example">[(ngModel)]="selectedRubro.id"
+                <option *ngFor="let rubro of rubros" value="{{rubro.id}}">
+                    {{rubro.name}}
+                </option>
+            </select>
+            <div *ngIf="formularioProducto.get('rubro')?.invalid && (formularioProducto.get('rubro')?.dirty)">
+                <p class="text-danger">El rubro es requerido</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <h4>Subrubros</h4>
+            <select formControlName="subrubro" class="form-select" type="number" aria-label="Default select example">
+                <option *ngFor="let subrubro of subrubros" value="{{subrubro.id}}">
+                    {{subrubro.name}}
+                </option>
+            </select>
+            <div
+                *ngIf="formularioProducto.get('subrubro')?.invalid && (formularioProducto.get('subrubro')?.dirty)">
+                <p class="text-danger">El subrubro es requerido</p>
+            </div>
+        </div>
+        <p>{{rubros | json}} </p>
+    </div>
+</div>--> 
+<div class="container marketing">
+    <div class="row mt-5 d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4 mt-5 mb-3">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseAlmacenamiento" role="button"
+                        aria-expanded="false" aria-controls="collapseAlmacenamiento">
+                        <img src="/assets/images/1almacenamiento.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Almacenamiento</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 mt-5 mb-3 align-self-center">
+                    <div class="collapse" id="collapseAlmacenamiento">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Disco rigido externo</a>
+                                <a routerLink class="list-group-item list-group-item-action list-group-item-dark">Lectores de tarjetas de memoria</a>
+                                <a routerLink="/subcategories" (onClick)="filterProductsByCategory(3)" class="list-group-item list-group-item-action list-group-item-warning">Pendrives</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Tarjetas de memoria</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseAudio">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Amplificadores de bajo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Amplificadores de guitarra</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Auriculares In Ear</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Auriculares In Ear inalámbricos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Auriculares On Ear</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Auriculares On Ear inalámbricos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Auriculares Over Ear</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Auriculares PC</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Auriculares Sport</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Auriculares Sport inalámbricos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Bandejas giradiscos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Barras de sonido </a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Home Theaters</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Micrófonos de PC</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Minicomponentes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Parlantes Bluetooth</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Parlantes PC 2.0 - 2.1</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Parlantes PC chicos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Radio AM/FM</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Radio despertador</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Radio Pocket AM/FM</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Receptores Bluetooth</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Reproductores MP3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseAudio" role="button"
+                        aria-expanded="false" aria-controls="collapseAudio">
+                        <img src="/assets/images/2audio.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Audio</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseAudioCar" role="button"
+                        aria-expanded="false" aria-controls="collapseAudioCar">
+                        <img src="/assets/images/3autocar.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Audio Autos</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseAudioCar">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Auto Estereos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Auto Estereos A/V</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Bafle</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">GPS</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Parlantes 6x9</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Parlantes redondos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Potencias de auto</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Subwoofers</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Transmisores de FM</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseCalculadoras">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Calculadoras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Calculadoras científicas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Calculadoras de impresión</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseCalculadoras" role="button"
+                        aria-expanded="false" aria-controls="collapseCalculadoras">
+                        <img src="/assets/images/4calculadora.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Calculadoras</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseCelulares" role="button"
+                        aria-expanded="false" aria-controls="collapseCelulares">
+                        <img src="/assets/images/5celulares.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Celulares</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseCelulares">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Accesorios para celulares</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Celulares Samsung</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseComponentes">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Caddies</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Coolers</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Discos rígidos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Discos sólidos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Fuentes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Gabinetes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Grabadoras de DVD</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Lector interno de tarjetas de memoria</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Memoria RAM</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Microprocesadores</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Pasta térmica</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Placas de video</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Placas madre</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseComponentes" role="button"
+                        aria-expanded="false" aria-controls="collapseComponentes">
+                        <img src="/assets/images/6componentes.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Componentes</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseComputacion" role="button"
+                        aria-expanded="false" aria-controls="collapseComputacion">
+                        <img src="/assets/images/7computacion.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Computación</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseComputacion">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Mini PCs</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Notebooks</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Servidores</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Tablets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseConectividad">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Adaptadores Ethernet</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Adaptadores WIFI</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Antenas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Extensores de rango</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Placas de sonido USB</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Placas Bluetooth USB</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Routers y Modems</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Switches</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseConectividad" role="button"
+                        aria-expanded="false" aria-controls="collapseConectividad">
+                        <img src="/assets/images/8conectividad.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Conectividad</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseConectores" role="button"
+                        aria-expanded="false" aria-controls="collapseConectores">
+                        <img src="/assets/images/9conectoresCables.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Conectores y Cables</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseConectores">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Adaptadores de audio</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Adaptadores de corriente</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Adaptadores de red</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Adaptadores HDMI</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Adaptadores USB</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Adaptadores de video</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Alargues de audio</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Alargues de corriente</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Adaptadores USB</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Adaptadores de video</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cables de audio</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cables de corriente</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cables de red</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cables HDMI</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cables varios</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cables de video</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Capturadoras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Conversores</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Dungles</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Hubs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseContadoras">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Contadoras de billetes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Detectoras de billetes falsos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseContadoras" role="button"
+                        aria-expanded="false" aria-controls="collapseContadoras">
+                        <img src="/assets/images/10contadoras.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Contadoras</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseElectroHogar" role="button"
+                        aria-expanded="false" aria-controls="collapseElectroHogar">
+                        <img src="/assets/images/11electrohogar.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Electro-Hogar</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseElectroHogar">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Batidoras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Belleza</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cafeteras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Corta Barbas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Exprimidores y extractores</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Fábricas de pan</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Freidoras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Heladeras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Hornos eléctricos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Lavarropas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Licuadoras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Microondas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Molinos de cafe</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Ollas y vaporeras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Parrillas y sartenes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Pavas eléctricas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Planchas de ropa</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Procesadoras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Sandwicheras y planchas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Soperas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Termontanques</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Tostadores</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseEnergia">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Baterías</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Baterías para cámaras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Baterías para teléfonos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cargadores de baterías</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cargadores de celulares</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cargadores de GPS</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cargadores inalámbricos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cargadores de notebook</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cargadores de pilas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Estabilizadores</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Powerbanks</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Transformadores</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">UPS</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Zapatillas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseEnergia" role="button"
+                        aria-expanded="false" aria-controls="collapseEnergia">
+                        <img src="/assets/images/12energia.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Energía</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseFotografia" role="button"
+                        aria-expanded="false" aria-controls="collapseFotografia">
+                        <img src="/assets/images/13fotografia.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Fotografía</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseFotografia">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Action Cameras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Albumes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cámaras reflex</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cámaras reflex accesorios </a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cámaras semi-profesionales</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Portarretratos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Tripodes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseFundas">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Fundas para bajo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Fundas para cámara</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Fundas para charango</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Fundas para guitarra acústica</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Fundas para guitarra criolla</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Fundas para guitarra eléctrica</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Fundas para monitor</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Fundas bolso para notebook</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Fundas maletin para notebook</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Fundas sobre para notebook</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Fundas para organo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Fundas para platillo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Fundas para soporte de guitarra</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Fundas para tablets</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Fundas bolso para tablets</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Fundas para ukelele</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Mochilas para notebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseFundas" role="button"
+                        aria-expanded="false" aria-controls="collapseFundas">
+                        <img src="/assets/images/14fundasMochilas.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Fundas y Mochilas</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseIluminacion" role="button"
+                        aria-expanded="false" aria-controls="collapseIluminacion">
+                        <img src="/assets/images/15iluminacion.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Iluminación</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseIluminacion">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Esferas espejadas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Flashes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Lámparas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">LED cabezales móviles</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">LED efectos DMX</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">LED ritmicos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">LED solares</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">LED spot</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Liquidos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Maquina de humo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseImagen">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Bases para notebook</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cámaras web</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Combo teclado y mouse inalámbricos USB</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Combo teclado y mouse con cable USB</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">DirecTV</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Escaneres</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Lectores de código de barras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Mice con cable PS2</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Mice con cable USB</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Mice inalámbrico</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Monitores</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Mouse Pads</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Presentadores Laser</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Proyectores y pantallas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Reproductores BluRay</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Sintonizadora de TV</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Smart TV Box</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Tabletas gráficas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Teclados Bluetooth</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Teclados con cable PS2</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Teclados con cable USB</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Teclados inalámbricos USB</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">TV y soportes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseImagen" role="button"
+                        aria-expanded="false" aria-controls="collapseImagen">
+                        <img src="/assets/images/16imagenPeriferico.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Imágen y Periféricos</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseImpresion" role="button"
+                        aria-expanded="false" aria-controls="collapseImpresion">
+                        <img src="/assets/images/17impresion.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Impresión</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseImpresion">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cartuchos Bother</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cartuchos Epson</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cartuchos Epson alternativos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cartuchos HP</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cartuchos HP alternativos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cintas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Impresoras laser Brother</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Impresoras laser HP</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Impresoras laser Samsung</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Impresoras de sistema continuo Epson</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Impresoras de sistema continuo HP</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Impresoras multifunción Epson</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Impresoras multifunción HP</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Tintas alternativas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Tintas Brother</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Tintas Epson</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Tintas Epson alternativas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Tintas HP</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Tintas HP alternativas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Toners Brother</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Toners Brother alternativos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Toners HP</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Toners HP alternativos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Toners Pantum</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Toners Ricoh alternativos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Toners Samsung</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Toners Samsung alternativos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Toners Xerox alternativos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseAccesorios">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Afinadores</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Atriles</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Baquetas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Bordona</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Botones sujeta correas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cañas para clarinete</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cañas para saxo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Capotrastes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cejillas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Clavijas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Clavijeros</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Correas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Ecualizador de guitarra</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Ejercitador de mano</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Encordado de guitarra acústica</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Encordado de bajo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Encordado de cavaquinho</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Encordado de guitarra criolla</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Encordado de guitarra eléctrica</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Encordado de ukelele</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Encordado de violín</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Escobillas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Estira cordal</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Felpas para platillos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Geles</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Golpeadores toc toc</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Hombrera de violín</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Limpiador de cuerdas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Luces LED para atriles</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Mariposas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Mazos para zurdo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Mentonera violín</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Metrónomo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Micrófonos de contacto</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Palancas para guitarra eléctrica</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Palillos de batería</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Palillos de timbal</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Parches para bombo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Parches para bongo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Parches importados arenados</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Parches importados</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Parches nacionales</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Pedales y Pedaleras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Peines</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Pie</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Porta puas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Protectores para guitarra</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Puas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Puentes de violín</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Resina</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Soportes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Sostén de harmonica</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Uñeros</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccesorios" role="button"
+                        aria-expanded="false" aria-controls="collapseAccesorios">
+                        <img src="/assets/images/18accesoriosInstrumentos.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Accesorios de Instrumentos</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseCuerda" role="button"
+                        aria-expanded="false" aria-controls="collapseCuerda">
+                        <img src="/assets/images/19instrumentosCuerda.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Instrumentos de Cuerda</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseCuerda">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Bajos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Charangos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Guitarras acústicas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Guitarras criollas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Guitarras criollas con corte</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Guitarras eléctricas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Ukeleles</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Violines</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseElectrico">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Órganos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseElectrico" role="button"
+                        aria-expanded="false" aria-controls="collapseElectrico">
+                        <img src="/assets/images/20instrumentosElectricos.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Instrumentos Eléctricos</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapsePercusion" role="button"
+                        aria-expanded="false" aria-controls="collapsePercusion">
+                        <img src="/assets/images/21instrumentosPercusion.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Instrumentos de Percusión</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapsePercusion">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Aros con sonajas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Batajones</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Baterías de niño</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Bombos criollos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Bombos legüeros</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Bongos peruano</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Bongos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Caixas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cajas chinas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cajones</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cascabeleros</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Casetas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Castañuelas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Celestines</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cencerros</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Djembes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Güiros</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Güiros torpedo</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Huevitos rítmicos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Maracas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Panderetas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Redoblantes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Repiques</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Set de Percusión</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Timbales</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Toc tocs</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Triángulos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Tumbadoras</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Xilofón</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Zicuayos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Zurdos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseViento">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Acordeones</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Armónicas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Clarinetes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Flautas dulce</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Melódicas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Trompetas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseViento" role="button"
+                        aria-expanded="false" aria-controls="collapseViento">
+                        <img src="/assets/images/22instrumentosViento.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Instrumentos de Viento</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseMovilidad" role="button"
+                        aria-expanded="false" aria-controls="collapseMovilidad">
+                        <img src="/assets/images/23movilidad.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Movilidad</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseMovilidad">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Monopatines</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseOptica">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Binoculares</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Brújulas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Lupas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Microscopios</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Telescopios</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseOptica" role="button"
+                        aria-expanded="false" aria-controls="collapseOptica">
+                        <img src="/assets/images/24optica.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Óptica</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapsePapel" role="button"
+                        aria-expanded="false" aria-controls="collapsePapel">
+                        <img src="/assets/images/25papeles.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Papeles</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapsePapel">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Formularios continuos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Papeles autoadhesivos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Papeles fotográficos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Resma A4</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Resma Oficio</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Sobres</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapsePilas">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Adaptadores de pilas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Pilas alcalinas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Pilas para audífonos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Pilas especiales</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Pilas recargables</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Pilas para relojeria</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapsePilas" role="button"
+                        aria-expanded="false" aria-controls="collapsePilas">
+                        <img src="/assets/images/26pilas.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Pilas</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeguridad" role="button"
+                        aria-expanded="false" aria-controls="collapseSeguridad">
+                        <img src="/assets/images/27seguridad.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Seguridad</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseSeguridad">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cables armados</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Cámaras analógicas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Cámaras IP</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">DVRs</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Leds infrarrojos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseSonido">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Bafles con batería</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Bafles compactos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Bafles de madera</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Bafles inyectados pasivos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Bafles para graves</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Bafles potenciados</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Bocinas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Consolas de sonido</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Consolas potenciadas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Controladores de PC</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Micrófonos inalámbricos UHF</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Micrófonos inalámbricos VHF</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Micrófonos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Mixers</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Parlantes</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Pie para micrófonos</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Platinum PRO series</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Potencias</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Soportes para micrófono</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Soportes para notebook</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Tripode para bafle</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Tweeters</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseSonido" role="button"
+                        aria-expanded="false" aria-controls="collapseSonido">
+                        <img src="/assets/images/28sonidoPro.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Sonido PRO</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseJuegos" role="button"
+                        aria-expanded="false" aria-controls="collapseJuegos">
+                        <img src="/assets/images/29videojuegos.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Video Juegos</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseJuegos">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Accesorios PS2</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Accesorios PS3</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Accesorios PS4</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Auriculares Gamer</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Combo teclado y mouse Gamer</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Consolas</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Joysticks para celulares</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Joysticks multiplataforma</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Joysticks para PC</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Joysticks para PS2</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Joysticks para PS3</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Joysticks para PS4</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Joysticks para Sega</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Mice Gamer</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Sillas Gamer</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Teclados Gamer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+    <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="row g-3">
+                <div class="col-lg-8 align-self-center">
+                    <div class="collapse" id="collapseWearable">
+                        <div class="card card-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">SmartBands</a>
+                                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">SmartWatches</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseWearable" role="button"
+                        aria-expanded="false" aria-controls="collapseWearable">
+                        <img src="/assets/images/30wearables.png" alt="alt" height="300">
+                    </a>
+                    <div class="container card">
+                        <div class="d-flex card-body justify-content-center">
+                            <h2 id="rubros">Wearables</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="border-bottom pb-3 mb-3">
+    </div>
+<app-footer></app-footer>

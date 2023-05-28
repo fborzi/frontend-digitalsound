@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col d-flex justify-content-center mt-5">
+            <form [formGroup]="formularioLogin" class="was-validated" (ngSubmit)="onLogin()">
+
+                <a routerLink="" class="d-flex justify-content-center">
+                    <img class="gap-3 mt-5 mb-4" src="/assets/images/Digital Logo Redondo1.png" alt="home"
+                        height="72px">
+                </a>
+                <h1 class="h3 mb-3 fw-normal">Por favor, Inicie sesión!</h1>
+
+                <div class="form-floating mb-2">
+                    <input style="margin: 0%" type="email" formControlName="username" class="form-control"
+                        placeholder="username" required>
+                    <label for="floatingInput">Email</label>
+                </div>
+                <!-- <div *ngIf="formularioLogin.get('username')?.valid">
+                    <p class="text-danger">El email es inválido</p>
+                </div> -->
+                <div *ngIf="formularioLogin.get('username')?.invalid && formularioLogin.get('username')?.dirty">
+                    <p class="text-danger">El email es requerido y debe ser válido.</p>
+                </div>
+                <div class="form-floating mb-2">
+                    <input style="margin: 0%" type="password" formControlName="password" class="form-control"
+                        placeholder="password" required>
+                    <label for="floatingInput">Contraseña</label>
+                </div>
+                <div *ngIf="formularioLogin.get('password')?.invalid && formularioLogin.get('password')?.dirty">
+                    <p class="text-danger">La contraseña debe tener 6 caracteres como mínimo.</p>
+                </div>
+                <div style="width: 400px">
+                    <div class="row mt-5" style="padding: 0%">
+                        <div class="col-md-6">
+                            <a class="w-100 btn btn-sm btn-outline-primary" routerLink="/ventamayoristasignup">No estoy
+                                registrado</a>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4">
+                            <button class="w-100 btn btn-sm btn-primary" type="submit" name="submit"
+                                [disabled]="this.formularioLogin.invalid">Iniciar sesión</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div *ngIf="isLoginFail">
+                    <div class="alert alert-danger mt-5">
+                        ERROR: {{errorMessage}}
+                    </div>
+                </div> -->
+                <p class="mt-5 mb-auto text-muted">&copy; 2022–2023</p>
+                <div class="mb-5"></div>
+            </form>
+
+        </div>
+    </div>
+</div>

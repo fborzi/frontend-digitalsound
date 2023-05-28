@@ -1,0 +1,120 @@
+<app-navbar></app-navbar>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col d-flex justify-content-center mt-5">
+
+            <form [formGroup]="formularioSignUp" class="was-validated" (ngSubmit)="onRegister()">
+                <a routerLink="" class="d-flex justify-content-center">
+                    <img class="gap-3 mt-5 mb-4" src="/assets/images/Digital Logo Redondo1.png" alt="home" height="72px">
+                </a>
+                <h1 class="h3 mb-3 fw-normal">Por favor, Registrese!</h1>
+
+                <div class="form-floating mb-2">
+                    <input 
+                        type="text"
+                        formControlName="name"
+                        class="form-control"
+                        placeholder="nombre"
+                        required>
+                    <label for="floatingInput">Nombre</label>
+                </div>
+                <div *ngIf="formularioSignUp.get('name')?.invalid && formularioSignUp.get('name')?.dirty">
+                    <p class="text-danger">El nombre es requerido</p>
+                </div>
+                <div class="form-floating mb-2">
+                    <input
+                        type="text"
+                        formControlName="lastname"
+                        class="form-control"
+                        placeholder="apellido"
+                        required>
+                    <label for="floatingInput">Apellido</label>
+                </div>
+                <div *ngIf="formularioSignUp.get('lastname')?.invalid && formularioSignUp.get('lastname')?.dirty">
+                    <p class="text-danger">El apellido es requerido</p>
+                </div>
+                <div class="form-floating mb-2">
+                    <input
+                        type="text"
+                        formControlName="dni"
+                        class="form-control"
+                        placeholder="dni"
+                        required>
+                    <label for="floatingInput">DNI o CUIT</label>
+                </div>
+                <div *ngIf="formularioSignUp.get('dni')?.invalid && formularioSignUp.get('dni')?.dirty">
+                    <p class="text-danger">El DNI o CUIT es requerido</p>
+                </div>
+                <div class="form-floating mb-2">
+                    <input 
+                        type="text"
+                        formControlName="business"
+                        class="form-control"
+                        placeholder="empresa"
+                        required>
+                    <label for="floatingInput">Empresa o Razon Social</label>
+                </div>
+                <div *ngIf="formularioSignUp.get('business')?.invalid && formularioSignUp.get('business')?.dirty">
+                    <p class="text-danger">La Empresa o Razón Social es requerida</p>
+                </div>
+                <div class="form-floating mb-2">
+                    <input
+                        style="margin: 0%"
+                        type="email" 
+                        formControlName="username"
+                        class="form-control"
+                        placeholder="email"
+                        required>
+                    <label for="floatingInput">Email</label>
+                </div>
+                <div *ngIf="formularioSignUp.get('username')?.invalid && formularioSignUp.get('username')?.dirty">
+                    <p class="text-danger">El email es requerido</p>
+                </div>
+                <div class="form-floating mb-2">
+                    <input 
+                        style="margin: 0%"
+                        type="password"
+                        formControlName="password"
+                        class="form-control"
+                        placeholder="password"
+                        required>
+                    <label for="floatingInput">Contraseña</label>
+                </div>
+                <div *ngIf="formularioSignUp.get('password')?.invalid && formularioSignUp.get('password')?.dirty">
+                    <p class="text-danger">La contraseña debe tener 6 caracteres como mínimo.</p>
+                </div>
+                <!-- <div class="form-floating mb-2">
+                    <input
+                        type="password"
+                        formControlName="repeatPassword"
+                        class="form-control"
+                        placeholder="repeat password"
+                        required>
+                    <label for="floatingInput">Repetir Contraseña</label>
+                </div>
+                <div
+                    *ngIf="formularioSignUp.get('repeatPassword')?.invalid && formularioSignUp.get('repeatPassword')?.dirty">
+                    <p class="text-danger">Las contraseñas no coinciden</p>
+                </div> -->
+                <div style="width: 400px">
+                    <div class="row mt-5" style="padding: 0%">
+                        <div class="col-md-6">
+                            <a class="w-100 btn btn-sm btn-outline-primary" routerLink="/ventamayoristalogin">Estoy
+                                Registrado</a>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4">
+                            <button 
+                                class="w-100 btn btn-sm btn-primary"
+                                type="submit"
+                                name="submit"
+                                [disabled]="this.formularioSignUp.invalid"
+                                >Registrarse</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
+            </form>
+        </div>
+    </div>
+</div>

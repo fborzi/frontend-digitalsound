@@ -1,0 +1,59 @@
+.card {
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    /*box-shadow: 0px 0px 10px rgb(41, 40, 40);*/
+    margin-top: 1.5rem;
+    background-color: rgb(50, 50, 50);
+  }
+  
+  .card-title {
+    padding: 0%;
+    margin: 0%;
+  }
+  
+  #rubros {
+    margin: 0%;
+    padding: 0%;
+    color:#ffffff;
+  }
+  
+  .marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .marketing h2 {
+    /*margin-top: 1.5rem;*/
+    font-weight: 200;
+    /*color: #5a5a5a;*/
+    color: whitesmoke;
+    text-shadow: 0px 4px 5px #000;
+  }
+  /* rtl:begin:ignore */
+  .marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+  }
+  
+  .list-group-item-warning{
+      color: rgb(255, 255, 255);
+      background-color: rgb(255, 178, 89);
+      border-color: rgb(224, 135, 15);
+  }
+  
+  .list-group-item-warning:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 204, 145);
+    border-color: rgb(224, 135, 15);
+  }
+  
+  .list-group-item-dark{
+      color: rgb(255, 255, 255);
+      background-color: rgb(26, 26, 26);
+      border-color: rgb(15, 15, 15);
+  }
+  
+  .list-group-item-dark:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(51, 51, 51);
+    border-color: rgb(15, 15, 15);
+  }

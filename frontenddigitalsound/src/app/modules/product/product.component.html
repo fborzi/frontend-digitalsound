@@ -1,0 +1,139 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3">
+            <form [formGroup]="categoryForm" (onClick)="filter()">
+            <div class="mt-5 mb-3">
+                <h4>Rubros</h4>
+                <select (change)="onSelect($any($event.target).value)" formControlName="category" class="form-select" type="number" aria-label="Default select example"> <!-- [(ngModel)]="selectedRubro.id"-->
+                    <option *ngFor="let category of categories" value="{{category.id}}">
+                        {{category.name}}
+                    </option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <h4>Subrubros</h4>
+                <select formControlName="subcategory" id="subrubro" class="form-select" type="number" aria-label="Default select example">
+                    <option *ngFor="let subcategory of selectedSubcategories" value="{{subcategory.id}}">
+                        {{subcategory.name}}
+                    </option>
+                </select>
+            </div>
+            <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="button" [disabled]="this.categoryForm.invalid"
+                    (click)="filter()">Filtrar</button>
+            </div>
+            </form>
+            <!--<li class="mb-1" *ngFor="let r of rubros" value="{{r.id}}">
+                <button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse"
+                    data-bs-target="#value" aria-expanded="true" aria-current="true">
+                    {{r.name}}
+                </button>
+
+                <div class="collapse show" id="{{r.id}}" *ngFor="let sub of subrubros">
+                    <ul class="list-unstyled fw-normal pb-1 small" *ngIf="r.id == sub.category.id">
+                        <li><a href="/docs/5.1/helpers/clearfix/"
+                                class="d-inline-flex align-items-center rounded">{{sub.name}}</a></li>
+                        <li><a href="/docs/5.1/helpers/colored-links/" class="d-inline-flex align-items-center rounded">Colored links</a></li>
+                      <li><a href="/docs/5.1/helpers/ratio/" class="d-inline-flex align-items-center rounded">Ratio</a></li>
+                      <li><a href="/docs/5.1/helpers/position/" class="d-inline-flex align-items-center rounded">Position</a></li>
+                      <li><a href="/docs/5.1/helpers/stacks/" class="d-inline-flex align-items-center rounded active" aria-current="page">Stacks</a></li>
+                      <li><a href="/docs/5.1/helpers/visually-hidden/" class="d-inline-flex align-items-center rounded">Visually hidden</a></li>
+                      <li><a href="/docs/5.1/helpers/stretched-link/" class="d-inline-flex align-items-center rounded">Stretched link</a></li>
+                      <li><a href="/docs/5.1/helpers/text-truncation/" class="d-inline-flex align-items-center rounded">Text truncation</a></li>
+                      <li><a href="/docs/5.1/helpers/vertical-rule/" class="d-inline-flex align-items-center rounded">Vertical rule</a></li>
+                    </ul>
+                </div>
+            </li>-->
+        </div>
+        <div class="col-md-9 mt-5">
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+                <div class="col-md-4" *ngFor="let p of filteredProducts">
+                    <div class="card" style="width: 20rem;">
+                        <img src="{{p.image}}" class="card-img-top" alt="img1">
+                        <div class="card-body">
+                            <!--<li *ng-repeat="p in productos | filter : 'i'">{{ p }}</li>-->
+                            <h5 class="card-title">{{p.name}}</h5>
+                            <p class="card-text">{{p.description}}</p>
+                            <p class="card-text">{{p.category.name}}</p>
+                            <p class="card-text">{{p.subcategory.name}}</p>
+                            <a href="#" class="btn btn-primary">{{p.price}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="container">
+    <p>
+        <button class="btn btn-primary" *ngFor="let r of rubros" data-bs-toggle="collapse" href="#multiCollapseExample1"
+            role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{{r.name}}</button>
+    </p>
+    <div class="row">
+        <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body" *ngFor="let sub of subrubros">
+                    {{sub.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="col-md-6">
+        <h1>Rubros</h1>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Rubro ID</th>
+                            <th scope="col">Rubro nombre</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let subrubro of subrubros">
+                        <tr>
+                            <th scope="row">{{subrubro.category.id}}</th>
+                            <td>{{subrubro.category.name}}</td>
+                            <td>{{subrubro.id}}</td>
+                            <td>{{subrubro.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <p>{{subrubros | json}} </p>
+        <select formControlName="subrubro" class="form-select" type="number" aria-label="Default select example">
+            <option *ngFor="let subrubro of subrubros" value="{{subrubro.id}}">
+                {{subrubro.name}}
+            </option>
+        </select>
+    </div>
+</div>-->
+
+<app-footer></app-footer>
+<!-- <div class="modal fade" id="descripcion" tabindex="-1" aria-labelledby="descripcionLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="descripcion">{{p.nombre}} {{p.marca}} {{p.modelo}} </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="card-text"> {{p.descripcion}}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button> -->
+<!-- </div>
+        </div>
+    </div>
+</div> -->

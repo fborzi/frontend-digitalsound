@@ -1,0 +1,395 @@
+<app-navbar></app-navbar>
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" id="slide1">
+      <div class="container">
+        <div class="carousel-caption text-start">
+          <h1 id="titulo1">Armamos tu PC GAMER</h1>
+          <p id="subtito1">A medida.</p>
+          <p><a class="btn btn-lg btn-primary" routerLink="/contact">Contactanos.</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item" id="slide2">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1 id="titulo2">Todo en INSUMOS</h1>
+          <p id="subtitulo2">Tintas, Cartuchos, Toners y Papel.</p>
+          <p><a class="btn btn-lg btn-primary" routerLink="/contact">Contactanos.</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item" id="slide3">
+      <div class="container">
+        <div class="carousel-caption text-end">
+          <h1 id="titulo3">RIGs de Mineria</h1>
+          <p id="subtitulo3">Proximamente.</p>
+          <p><a class="btn btn-lg btn-primary" routerLink="/contact">Contactanos.</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<!-- Marketing messaging and featurettes
+  ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+  <!-- Columnas RUBROS debajo del carrusel -->
+  <!-- Fila 1 -->
+  <div class="row">
+    <div class="col-lg-4">
+      <a routerLink="/filteredProducts" (click)="getAlmacenamiento()">
+        <img src="/assets/images/1almacenamiento.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Almacenamiento</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/2audio.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Audio</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/3autocar.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Audio Autos</h2>
+        </div>
+      </div>
+      <!--<p>And lastly this, the third column of representative placeholder content.</p>-->
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <!-- Fila 2 -->
+  <div class="row">
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/4calculadora.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Calculadoras</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/5celulares.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Celulares</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/6componentes.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Componentes</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <!-- Fila 3 -->
+  <div class="row">
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/7computacion.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Computación</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/8conectividad.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Conectividad</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/9conectoresCables.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Conectores y Cables</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <!-- Fila 4 -->
+  <div class="row">
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/10contadoras.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Contadoras</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/11electrohogar.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Electro Hogar</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/12energia.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Energía</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <!-- Fila 5 -->
+  <div class="row">
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/13fotografia.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Fotografía</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img src="/assets/images/14fundasMochilas.png" alt="alt" height="250">
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Fundas y Mochilas</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/15iluminacion.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Iluminación</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <!-- Fila 6 -->
+  <div class="row">
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/16imagenPeriferico.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Imágen y Perifericos</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/17impresion.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Impresión</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/18accesoriosInstrumentos.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Accesorios de Instrumentos</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <!-- Fila 7 -->
+  <div class="row">
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/19instrumentosCuerda.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Instrumentos de Cuerda</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/20instrumentosElectricos.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Instrumentos Eléctricos</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/21instrumentosPercusion.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Instrumentos de Percusión</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <!-- Fila 8 -->
+  <div class="row">
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/22instrumentosViento.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Instrumentos de Viento</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/23movilidad.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Movilidad</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/24optica.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Óptica</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <!-- Fila 9 -->
+  <div class="row">
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/25papeles.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Papeles</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/26pilas.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Pilas</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/27seguridad.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Seguridad</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+  <!-- Fila 10 -->
+  <div class="row">
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/28sonidoPro.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Sonido PRO</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/29videojuegos.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Video Juegos</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <a>
+        <img src="/assets/images/30wearables.png" alt="alt" height="250">
+      </a>
+      <div class="container card">
+        <div class="d-flex card-body justify-content-center">
+          <h2 id="rubros">Wearables</h2>
+        </div>
+      </div>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+</div>
+<app-footer></app-footer>
